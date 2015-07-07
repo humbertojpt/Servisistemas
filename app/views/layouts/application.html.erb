@@ -4,14 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "Servisistemas" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
-<body>
+<% if user_signed_in? %>
+  <body>
+ <% else %>
+ <body class="cover">
+<% end %>
 
   <div class="contain-to-grid">
     <nav class="top-bar" data-topbar>
@@ -32,45 +36,39 @@
 
           </li>
           <li>
-            <%= link_to t('Users'), users_path %>
+            <%= link_to t('ADMIN'), users_path %>
           </li>
         </ul>
 
         <ul class="right">
-          <% if user_signed_in? %>
-          
-          <li>
-            <%= link_to current_user.firstname, edit_user_registration_path %>
-          </li>
-          <li>
-            <%= link_to t('Sign Out'), destroy_user_session_path, method: :delete %>
-          </li>
-          <% else %>
-          <li class="active">
-            <%= link_to t('Sign Up'), new_user_registration_path %>
-          </li>
-          <li>
-            <%= link_to t('Sign In'), new_user_session_path %>
-          </li>
-          <% end %>
-        </ul>
+            <% if user_signed_in? %>
+              <li class="has-dropdown">
+                <a href="#"><%= current_user.username %></a>
+                <ul class="dropdown">
+                  <li><%= link_to t('Programa') %></li>
+                  <li><%= link_to t('Edit'), edit_user_registration_path %></li>
+                  <li><%= link_to t("Log Out"), destroy_user_session_path, method: :delete %></li>
+                </ul>
+              </li>
+              
+            <% end %>
+            
+          </ul>
       </section>
     </nav>
   </div>
   <br>
   <div class="row">
-    <div class="columns large-12">
-
-     <%flash.each do |type, message|%>
-             <div data-alert class="alert-box radius">
-             <%=message%>
-              <a href="#" class="close">&times ;</a>
-             </div>
-         <%end%>
-
-      <%= yield %>
+      <div class="large-12 columns">
+      <% flash.each do |type, message| %>
+      <div data-alert class="alert-box radius <%= flass_class type %>">
+        <%= message %>
+        <a href="#" class="close">&times;</a>
+      </div>
+      <% end %>
+        <%= yield %>
+      </div>
     </div>
-  </div>
 
     <%= javascript_include_tag "application" %>
   </body>
