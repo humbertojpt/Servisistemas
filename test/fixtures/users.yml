@@ -1,13 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  firstname: MyString
-  lastname: MyString
+  name: MyString
   username: MyString
-  admin: false
+  cellphone: 1
+  country: MyString
+  city: MyString
 
 two:
-  firstname: MyString
-  lastname: MyString
+  name: MyString
   username: MyString
-  admin: false
+  cellphone: 1
+  country: MyString
+  city: MyString

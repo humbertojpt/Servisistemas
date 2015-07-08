@@ -1,6 +1,5 @@
 module ApplicationHelper
-	
-  def flass_class(type)
+	def flass_class(type)
     case type
       when :success then "success"
       when :error   then "warning"

@@ -8,10 +8,10 @@ before_action :authenticate_user!
 
 	def configure_permitted_parameters
 	  devise_parameter_sanitizer.for(:sign_up) do |u|
-	    u.permit(:name, :username, :email, :password, :password_confirmation)
+	    u.permit(:name, :username, :email, :password, :password_confirmation, :cellphone, :country, :city)
 	  end
 	  devise_parameter_sanitizer.for(:account_update) do |u|
-	    u.permit(:username, :firstname, :lastname, :email, :password, :password_confirmation, :current_password)
+	    u.permit(:username, :name, :email, :password, :password_confirmation, :current_password, :cellphone, :country, :city)
 	  end
 	end
 end

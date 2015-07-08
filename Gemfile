@@ -14,9 +14,9 @@ gem 'coffee-rails', '~> 4.0.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
-gem 'foundation-rails'
-
 gem 'devise'
+gem 'foundation-rails', '~> 5.4.5.0'
+gem "omniauth-google-oauth2", "~> 0.2.1"
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'

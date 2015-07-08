@@ -8,7 +8,9 @@
   </div>
 </div>
 
+<br>
 <hr>
+<br>
 
 <div class="row">
   <div class="large-2 medium-2 small-12 columns">
@@ -16,7 +18,7 @@
   </div>
   <div class="large-8 medium-8 small-12 columns">
     <div class="border">
- <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="field">
           <%= f.label :email %><br />
           <%= f.email_field :email, autofocus: true %>
@@ -35,9 +37,10 @@
         <% end -%>
       
         <div class="row">
-          <div class="large-0 medium-4 small-4 columns">
+          <div class="large-4 medium-4 small-4 columns">
+            
           </div>
-          <div class="large-12-centered medium-8 small-8 columns">
+          <div class="large-8 medium-8 small-8 columns">
             <div class="actions">
               <%= f.submit "Log in", class:"large button" %>
             </div>
