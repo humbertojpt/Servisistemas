@@ -17,7 +17,7 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'devise'
 gem 'foundation-rails', '~> 5.4.5.0'
 gem "omniauth-google-oauth2", "~> 0.2.1"
-
+gem 'paperclip'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks

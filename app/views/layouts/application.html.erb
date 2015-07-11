@@ -42,6 +42,11 @@
 
         <ul class="right">
             <% if user_signed_in? %>
+              <li class="avatar">
+                <% if current_user.avatar.file? %>
+                <%= image_tag current_user.avatar.url(:mini), class: "round" %>
+                <% end %>
+              </li>
               <li class="has-dropdown">
                 <a href="#"><%= current_user.username %></a>
                 <ul class="dropdown">

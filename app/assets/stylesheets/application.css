@@ -34,3 +34,14 @@ nav, .contain-to-grid, .top-bar-section, .dropdown , .right{
 .login span{
 	color: white !important;
 }
+
+.avatar{
+  padding-top: 5px;
+
+}
+
+img.round{
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+}
